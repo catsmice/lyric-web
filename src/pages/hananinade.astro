@@ -1,8 +1,13 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-const pageTitle = "Home Page";
+import YoutubePlayer from '../components/YoutubePlayer.astro';
+
+const pageTitle = "花になって";
+const videoId = "v-WcMQbXbKY";
 ---
 <BaseLayout pageTitle={pageTitle}>
     花になって
+
+<YoutubePlayer vid={videoId}/>
 
 </BaseLayout>
