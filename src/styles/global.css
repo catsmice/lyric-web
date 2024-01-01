@@ -24,6 +24,7 @@ h1 {
 .image-button {
     transition: box-shadow 0.3s ease, transform 0.3s ease;
     box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.1);
+    display: inline-block; /* To ensure transform applies correctly */
     transform: translate(-5px, -5px); /* Moves the image up by 5px */
 }
 

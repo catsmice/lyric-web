@@ -10,7 +10,7 @@ const pageTitle = "Home Page";
      <div id="div2" class="flex flex-col md:flex-row">
       <div id="div3" class="md:w-1/2 flex justify-center">
         <a href="https://example.com" id="imageLink">
-        <img width=350 height=350 alt="ryokushaka-350x350" class="mx-1 mb-4 md:mb-0 rounded-lg drop-shadow-[0_15px_15px_rgba(0,0,0,0.5)] image-button" src="/images/ryokushaka-350x350.jpg"/>
+        <img width=350 height=350 alt="ryokushaka-350x350" class="mx-1 mb-4 md:mb-0 rounded-lg image-button" src="/images/ryokushaka-350x350.jpg"/>
           </a>
         <!-- <img id="imageToClick" width=350 height=350 alt="ryokushaka-350x350" class="mx-1 mb-4 md:mb-0 rounded-lg drop-shadow-[0_15px_15px_rgba(0,0,0,0.5)] image-button" src="/images/ryokushaka-350x350.jpg"/>-->
       </div>
@@ -19,10 +19,10 @@ const pageTitle = "Home Page";
         花になって - 緑黄色社会
        </h2>
        <p class="mb-6">
-        綠黃色社會的第八張單曲，是專為電視動畫『藥屋少女的呢喃』的開場而創作。
+        綠黃色社會的第八張單曲，是專為電視動畫『藥屋少女的呢喃』開場的創作。
        </p> 
        <p class="mb-6">
-        負責作詞的長屋在接受訪問的時候提到，歌詞中的「あんじゃない」這種說話方式，則源於猫猫的性格，有毒的東西有時也可以成為藥物，而且猫猫自己，雖然某種程度上帶有毒性，但她還是從事藥屋的工作並且閃耀著光芒。
+        負責作詞的長屋在接受訪問的時候提到，歌詞中的「あんじゃない」這種說話方式，源於猫猫的性格，有毒的東西有時也可以成為藥物，而且猫猫自己，雖然某種程度上帶有毒性，但她還是從事藥屋的工作並且閃耀著光芒。
        </p>
        <!-- <a class="bg-red-600 text-white py-2 px-4 rounded hover:bg-red-700 transition duration-300" href="#">
         View
@@ -40,9 +40,9 @@ const pageTitle = "Home Page";
                 event.preventDefault(); // Prevent the default link behavior
                 setTimeout(function() {
                     window.open(imageLink.href, '_blank');
-                }, 300);
+                }, 300); // Delay for the "landing" animation
             });
         }
     });
-  </script>
+</script>
 </BaseLayout>
