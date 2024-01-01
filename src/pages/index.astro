@@ -3,5 +3,30 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 const pageTitle = "Home Page";
 ---
 <BaseLayout pageTitle={pageTitle}>
-  <h2>My awesome blog subtitle</h2>
+
+  <section class="container mx-auto px-6 py-12">
+    <!-- Live Music Performances -->
+    <div id="div1" class="p-6 mb-6">
+     <div id="div2" class="flex flex-col md:flex-row">
+      <div id="div3" class="md:w-1/2 flex justify-center">
+       <img width=350 height=350 alt="ryokushaka-350x350" class="mx-1 mb-4 md:mb-0 rounded-lg drop-shadow-[0_15px_15px_rgba(0,0,0,0.5)]" src="/images/ryokushaka-350x350.jpg"/>
+      </div>
+      <div class="md:w-1/2 md:pl-6 flex flex-col justify-center">
+       <h2 class="text-2xl font-semibold mb-3">
+        花になって - 緑黄色社会
+       </h2>
+       <p class="mb-6">
+        綠黃色社會的第八張單曲。自10月21日（星期六）起播放的電視動畫『藥屋的獨白』的開場主題曲「花になって」，是專為此而創作的。
+       </p> 
+       <p class="mb-6">
+        負責作詞的長屋在接受訪問的時候提到，歌詞中的「あんじゃない」這種說話方式，則源於猫猫的性格，有毒的東西有時也可以成為藥物，而且猫猫自己，雖然某種程度上帶有毒性，但她還是從事藥屋的工作並且閃耀著光芒。
+       </p>
+       <!-- <a class="bg-red-600 text-white py-2 px-4 rounded hover:bg-red-700 transition duration-300" href="#">
+        View
+       </a>-->
+      </div>
+     </div>
+    </div>
+  </section>
+
 </BaseLayout>
