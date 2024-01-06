@@ -1,26 +1,47 @@
 ---
 const { vid } = Astro.props;
+
+// Define your lyrics data
+const lyrics = [
+    { time: 0, lyric: "First line of the song" },
+    { time: 15, lyric: "Lyric at 0:15" },
+    // ... more lyrics
+];
+
+// Serialize the lyrics data into a JSON string
+const lyricsJson = JSON.stringify(lyrics);
 ---
+
 <div id="player" data-vid={vid}></div>
+<div id="lyrics"></div> 
+
+<!-- Embed the lyrics data in a hidden div or a script tag -->
+<div id="lyrics-data" style="display: none;">{lyricsJson}</div>
 
 <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
 <script>
-// 2. This code loads the IFrame Player API code asynchronously.
+    // Retrieve the lyrics data from the hidden div
+    var lyricsJson = document.getElementById('lyrics-data').innerText;
+    var lyrics = JSON.parse(lyricsJson);
+
+    // 2. This code loads the IFrame Player API code asynchronously.
     var tag = document.createElement('script');
 
     tag.src = "https://www.youtube.com/iframe_api";
     var firstScriptTag = document.getElementsByTagName('script')[0];
     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
       
-// 3. This function creates an <iframe> (and YouTube player)
-//    after the API code downloads.
+    // 3. This function creates an <iframe> (and YouTube player)
+    //    after the API code downloads.
     var player;
+    var updateLyricsInterval;
+    
     window.onYouTubeIframeAPIReady = function() {
         var videoId = document.getElementById('player').getAttribute('data-vid');
 
         player = new YT.Player('player', {
             height: '270',
-            width: '480',
+            width: '375',
             videoId: videoId,
             playerVars: {
                 'playsinline': 1
@@ -32,24 +53,50 @@ const { vid } = Astro.props;
         });
     }
     
-// 4. The API will call this function when the video player is ready.
+    // 4. The API will call this function when the video player is ready.
     function onPlayerReady(event) {
         event.target.playVideo();
     }
     
-// 5. The API calls this function when the player's state changes.
-//    The function indicates that when playing a video (state=1),
-//    the player should play for six seconds and then stop.
+    // 5. The API calls this function when the player's state changes.
+    //    The function indicates that when playing a video (state=1),
+    //    the player should play for six seconds and then stop.
     var done = false;
   
-    function onPlayerStateChange(event) {  
-        if (event.data == YT.PlayerState.PLAYING && !done) {
-            setTimeout(stopVideo, 6000);
-            done = true;
+    //function onPlayerStateChange(event) {  
+    //    if (event.data == YT.PlayerState.PLAYING && !done) {
+    //        setTimeout(stopVideo, 6000);
+    //        done = true;
+    //    }
+    //}
+    
+    //function stopVideo() {
+    //    player.stopVideo();
+    //}
+
+    function onPlayerStateChange(event) {
+        if (event.data == YT.PlayerState.PLAYING) {
+            updateLyricsInterval = setInterval(updateLyrics, 500); // Update every second
+        } else {
+            clearInterval(updateLyricsInterval);
         }
     }
-    
-    function stopVideo() {
-        player.stopVideo();
+
+    function updateLyrics() {
+        const currentTime = Math.floor(player.getCurrentTime());
+        let currentLyric = '';
+
+        // Find the last lyric where the time is less than or equal to the current time
+        for (let i = 0; i < lyrics.length; i++) {
+            if (lyrics[i].time <= currentTime) {
+                currentLyric = lyrics[i].lyric;
+            } else {
+                break; // Exit the loop as soon as a future lyric is found
+            }
+        }
+
+        if (currentLyric) {
+            document.getElementById('lyrics').innerText = currentLyric;
+        }
     }
 </script>    
