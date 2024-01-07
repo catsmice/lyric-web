@@ -7,10 +7,42 @@ const videoId = "v-WcMQbXbKY";
 const bgColor = "#DDFFF3";
 
 const lyrics = [
-    { time: 15, original: "<ruby>陰<rt>かげ</rt></ruby>にそっと<ruby>隠<rt>かく</rt></ruby>れようがいいんじゃない?", translation: "靜靜的隱藏在陰影下不是很好嗎?" },
-    { time: 20, original: "<ruby>蕾<rt>つぼみ</rt></ruby>のような<ruby>花<rt>はな</rt></ruby>だってあんじゃない", translation: "也有花朵看上去就只是花蕾不是嗎" },
-    // ... more lyrics
+    { time: 15, original: "<ruby>陰<rt>かげ</rt></ruby>にそっと<ruby>隠<rt>かく</rt></ruby><ruby>れようがいいんじゃない? (いいんじゃない?)", translation: "靜靜的隱藏在陰影下不是很好嗎?" },
+    { time: 20, original: "<ruby>蕾<rt>つぼみ</rt></ruby>のような<ruby>花<rt>はな</rt></ruby><ruby>だってあんじゃない (あんじゃない)", translation: "也有花朵看上去就只是花蕾不是嗎" },
+    { time: 25, original: "<ruby>秘密<rt>ひみつ</rt></ruby>にして<ruby>守<rt>まも</rt></ruby><ruby>るのがいいんじゃない (いいんじゃない)", translation: "保守秘密不說出去不也很好嗎" },
+    { time: 30, original: "<ruby>誰<rt>だれ</rt></ruby>にも<ruby>邪魔<rt>じゃま</rt></ruby>されず<ruby>華麗<rt>かれい</rt></ruby>に<ruby>咲<rt>さ</rt></ruby>いてる", translation: "不受任何人打擾 華麗的綻放" },
+    { time: 35, original: "<ruby>甘<rt>あま</rt></ruby>い<ruby>苦<rt>にが</rt></ruby>いにハマんない", translation: "不溺於甜蜜或苦澀當中" },
+    { time: 38, original: "その<ruby>判断<rt>はんだん</rt></ruby>がくだんない", translation: "不懷疑自己這樣的決定" },
+    { time: 40, original: "<ruby>気<rt>き</rt></ruby>に<ruby>病<rt>や</rt></ruby>んで<ruby>下<rt>した</rt></ruby>を<ruby>向<rt>む</rt></ruby>かないでいて", translation: "不會惴惴不安而垂下頭來" },
+    { time: 45, original: "<ruby>愛<rt>あい</rt></ruby>に<ruby>慣<rt>な</rt></ruby>れちゃいない <ruby>無駄<rt>むだ</rt></ruby>に<ruby>飾<rt>かざ</rt></ruby>らない", translation: "不慣於愛情 過度去裝扮自己" },
+    { time: 50, original: "<ruby>綺麗<rt>きれい</rt></ruby>にされた<ruby>花瓶<rt>かびん</rt></ruby>も<ruby>肥<rt>こ</rt></ruby>やしも<ruby>何<rt>なに</rt></ruby>もいらない", translation: "漂亮的花瓶殷勤地施肥這些都不需要" },
+    { time: 55, original: "その<ruby>姿<rt>すがた</rt></ruby>が<ruby>美<rt>うつく</rt></ruby>しい", translation: "這樣的姿態本身就很美" },
+    { time: 59, original: "<ruby>花<rt>はな</rt></ruby>になって ほらニヒルに<ruby>笑<rt>わら</rt></ruby>って", translation: "化為一朵花 看吧 他似笑非笑著" },
+    { time: 64, original: "その<ruby>顔<rt>かお</rt></ruby>にぞくぞくして<ruby>目<rt>め</rt></ruby>が<ruby>離<rt>はな</rt></ruby>せない", translation: "面容使人心跳加速無法移開目光" },
+    { time: 69, original: "<ruby>味見<rt>あじみ</rt></ruby>して <ruby>君<rt>きみ</rt></ruby>の<ruby>毒<rt>どく</rt></ruby>は<ruby>私<rt>わたし</rt></ruby>の<ruby>薬<rt>くすり</rt></ruby>って", translation: "淺嘗則止 你的毒就是我的藥" },
+    { time: 75, original: "<ruby>包<rt>つつ</rt></ruby>んであげるから <ruby>笑<rt>わら</rt></ruby>って", translation: "我會包容這點的 露出微笑吧" },
+    { time: 85, original: "ねえ <ruby>会<rt>あ</rt></ruby>いたい<ruby>逢<rt>あ</rt></ruby>いたい", translation: "吶 好想見你好想見你" },
+    { time: 90, original: "その<ruby>笑顔<rt>えがお</rt></ruby>に<ruby>会<rt>あ</rt></ruby>いたい<ruby>逢<rt>あ</rt></ruby>いたい", translation: "想要見到那張笑臉" },
+    { time: 95, original: "って<ruby>言<rt>い</rt></ruby>えば<ruby>笑<rt>わら</rt></ruby>ってくれるかな", translation: "若是我這麼說 你會笑嗎" },
+    { time: 96, original: "<ruby>陰<rt>かげ</rt></ruby>から<ruby>支<rt>ささ</rt></ruby>えるくらいはいいんじゃない? (いいんじゃない?)", translation: "從背後給予支持不也很好嗎?" },
+    { time: 100, original: "<ruby>欲<rt>よく</rt></ruby>を<ruby>言<rt>い</rt></ruby>えばこの<ruby>手<rt>て</rt></ruby>で<ruby>咲<rt>さ</rt></ruby>かせてみせたい", translation: "若我能要求 希望能夠親手幫助你綻放" },
+    { time: 105, original: "<ruby>病<rt>やまい</rt></ruby>のように<ruby>心<rt>こころ</rt></ruby>を<ruby>喰<rt>く</rt></ruby>らう<ruby>花<rt>はな</rt></ruby>", translation: "如病症般 吞噬心靈的花朵" },
+    { time: 112, original: "<ruby>枯<rt>か</rt></ruby>らしたくないのさ", translation: "不想讓其枯萎啊" },
+    { time: 117, original: "<ruby>光<rt>ひかり</rt></ruby>が<ruby>届<rt>とど</rt></ruby>かずとも", translation: "即使光線無法到達" },
+    { time: 122, original: "<ruby>水<rt>みず</rt></ruby>をあげ<ruby>続<rt>つづ</rt></ruby>けるから", translation: "我也會繼續澆水" },
+    { time: 130, original: "いい<ruby>加減<rt>かげん</rt></ruby>に<ruby>気付<rt>きづ</rt></ruby>いて <ruby>君<rt>きみ</rt></ruby>は<ruby>素敵<rt>すてき</rt></ruby>って", translation: "也差不多也該注意到了吧 你的美麗之處" },
+    { time: 135, original: "<ruby>自惚<rt>うぬぼ</rt></ruby>れてもっとお<ruby>大事<rt>だいじ</rt></ruby>に", translation: "更加自戀一點 珍視自己一點" },
+    { time: 140, original: "<ruby>無自覚<rt>むじかく</rt></ruby>なまんま <ruby>愛<rt>あい</rt></ruby>を<ruby>蓄<rt>たくわ</rt></ruby>えて", translation: "在毫無自覺的狀況下 積累著愛情" },
+    { time: 145, original: "<ruby>綺麗<rt>きれい</rt></ruby>にされた<ruby>花瓶<rt>かびん</rt></ruby>も<ruby>肥<rt>こ</rt></ruby>やしも<ruby>何<rt>なに</rt></ruby>もいらない", translation: "漂亮的花瓶 殷勤地施肥 都不需要" },
+    { time: 150, original: "その<ruby>姿<rt>すがた</rt></ruby>で<ruby>咲<rt>さ</rt></ruby>き<ruby>誇<rt>ほこ</rt></ruby>れ", translation: "以那樣的姿態盛開" },
+    { time: 157, original: "<ruby>花<rt>はな</rt></ruby>になって ほらニヒルに<ruby>笑<rt>わら</rt></ruby>って", translation: "化為一朵花 看吧她似笑非笑著" },
+    { time: 161, original: "その<ruby>顔<rt>かお</rt></ruby>にぞくぞくして<ruby>目<rt>め</rt></ruby>が<ruby>離<rt>はな</rt></ruby>せない", translation: "面容使人心跳加速無法移開目光" },
+    { time: 167, original: "<ruby>味見<rt>あじみ</rt></ruby>して <ruby>君<rt>きみ</rt></ruby>の<ruby>毒<rt>どく</rt></ruby>は<ruby>私<rt>わたし</rt></ruby>の<ruby>薬<rt>くすり</rt></ruby>って", translation: "淺嘗則止 你的毒就是我的藥" },
+    { time: 172, original: "<ruby>包<rt>つつ</rt></ruby>んであげるから", translation: "我會包容這點的" },
+    { time: 177, original: "<ruby>楽<rt>らく</rt></ruby>にして <ruby>君<rt>きみ</rt></ruby>の<ruby>闇<rt>やみ</rt></ruby>は<ruby>私<rt>わたし</rt></ruby>の<ruby>光<rt>ひかり</rt></ruby>って", translation: "放輕鬆 你的黑暗就是我的光芒" },
+    { time: 183, original: "<ruby>愛<rt>あい</rt></ruby>してあげるから <ruby>笑<rt>わら</rt></ruby>って", translation: "我會愛你的 露出微笑吧" },
 ];
+
 ---
 <PlayerLayout pageTitle={pageTitle} bgColor={bgColor}/>
 
