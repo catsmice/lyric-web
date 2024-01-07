@@ -42,14 +42,23 @@ h1 {
     color: black;
 }
 
-.translated-lyric {
-    font-size: 0.8em;
-    color: gray;
-}
-
 .hiragana-lyric {
     font-size: 0.8em;
     color: darkblue;
+}
+
+ruby {
+    font-size: 1em;
+}
+
+rt {
+    font-size: 0.8em;
+    color: darkblue;
+}
+
+.translated-lyric {
+    font-size: 0.8em;
+    color: gray;
 }
 
 .current-lyric {
@@ -62,11 +71,6 @@ h1 {
     max-height: 285px; /* Adjust as needed */
     padding: 10px;
     scroll-behavior: smooth; /* Enables smooth scrolling */
-}
-
-.current-lyric {
-    font-weight: bold;
-    color: blue; /* Adjust styling as needed */
 }
 
 /* nav styles */
