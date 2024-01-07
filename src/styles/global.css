@@ -59,7 +59,7 @@ h1 {
 
 #lyrics {
     overflow-y: auto;
-    max-height: 200px; /* Adjust as needed */
+    max-height: 285px; /* Adjust as needed */
     padding: 10px;
     scroll-behavior: smooth; /* Enables smooth scrolling */
 }

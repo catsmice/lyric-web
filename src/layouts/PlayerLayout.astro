@@ -1,10 +1,11 @@
 ---
 //import Header from '../components/Header.astro';
-import '@fontsource-variable/noto-sans-tc';
+//import '@fontsource-variable/noto-sans-tc';
+import '@fontsource-variable/noto-sans-jp';
 import Hero from '../components/Hero.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
-const { pageTitle } = Astro.props;
+const { pageTitle, bgColor } = Astro.props;
 ---
 <html lang="en">
     <head>
@@ -13,16 +14,26 @@ const { pageTitle } = Astro.props;
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="generator" content={Astro.generator} />
         <title>{pageTitle}</title>
+        <style define:vars={{bgColor}}>
+            html {
+                background-color: var(--bgColor);
+                /*font-family: sans-serif;*/
+                font-family: 'Noto Sans JP Variable', sans-serif;
+            }    
+        </style>
     </head>
     <body>
-        <!-- <Header /> -->
-        <Hero />
-        
+            <div class="w-full max-w-md p-4 flex justify-center">
+                <p class="text-lg font-semibold">
+                    正在播放：{pageTitle}
+                </p>
+            </div>
+
         <slot />
 
         <!-- <Footer /> -->
         <!-- <script>
             import "../scripts/menu.js";
-        </script>-->
+        </script> -->
     </body>
 </html>

@@ -1,13 +1,24 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import PlayerLayout from '../layouts/PlayerLayout.astro';
 import YoutubePlayer from '../components/YoutubePlayer.astro';
 
 const pageTitle = "花になって";
 const videoId = "v-WcMQbXbKY";
+const bgColor = "#DDFFF3";
+const lyrics = [
+    { time: 1, original: "陰にそっと隠れようがいいんじゃない? ", translation: "First line translated", hiragana: "Hiragana for first line" },
+    { time: 3, original: "Lyric at 0:03", translation: "Translation at 0:03", hiragana: "Hiragana at 0:03" },
+    { time: 6, original: "Lyric at 0:06", translation: "Translation at 0:06", hiragana: "Hiragana at 0:06" },
+    { time: 9, original: "Lyric at 0:09", translation: "Translation at 0:09", hiragana: "Hiragana at 0:09" },
+    { time: 12, original: "Lyric at 0:12", translation: "Translation at 0:12", hiragana: "Hiragana at 0:12" },
+    { time: 15, original: "Lyric at 0:15", translation: "Translation at 0:15", hiragana: "Hiragana at 0:15" },
+    { time: 18, original: "Lyric at 0:18", translation: "Translation at 0:18", hiragana: "Hiragana at 0:18" },
+    { time: 21, original: "Lyric at 0:21", translation: "Translation at 0:21", hiragana: "Hiragana at 0:21" }
+    // ... more lyrics
+];
 ---
-<BaseLayout pageTitle={pageTitle}>
-    花になって
+<PlayerLayout pageTitle={pageTitle} bgColor={bgColor}/>
 
-<YoutubePlayer vid={videoId}/>
+<YoutubePlayer vid={videoId} lyrics={lyrics}/>
 
 </BaseLayout>
