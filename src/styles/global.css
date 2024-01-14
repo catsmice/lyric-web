@@ -37,11 +37,6 @@ h1 {
     margin-bottom: 10px;
 }
 
-.original-lyric {
-    font-size: 1em;
-    color: black;
-}
-
 .hiragana-lyric {
     font-size: 0.8em;
     color: darkblue;
@@ -56,14 +51,23 @@ rt {
     color: darkblue;
 }
 
-.translated-lyric {
-    font-size: 0.8em;
-    color: #00917B;
-}
-
 .current-lyric {
     border-left: 3px solid blue;
     padding-left: 5px;
+    background-color: rgba(255, 237, 203, 0.5); /* Semi-transparent white overlay */
+    border-radius: 3px; /* Rounded corners */
+    margin: 5px; /* Add some margin if needed */
+}
+
+/* Styles for the original and translated lyrics */
+.original-lyric {
+    font-size: 1em;
+    color: black;
+}
+
+.translated-lyric {
+    font-size: 0.8em;
+    color: #00917B;
 }
 
 #lyrics {
@@ -72,6 +76,7 @@ rt {
     padding: 10px;
     scroll-behavior: smooth; /* Enables smooth scrolling */
 }
+
 
 /* nav styles */
 .hamburger {
