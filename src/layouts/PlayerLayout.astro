@@ -14,15 +14,21 @@ const { pageTitle, bgColor } = Astro.props;
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="generator" content={Astro.generator} />
         <title>{pageTitle}</title>
-        <style define:vars={{bgColor}}>
-            body {
-                background-color: var(--bgColor);
+        <!-- <style define:vars={{bgColor}}>
+            html {
+                /*background-color: var(--bgColor);*/
                 /*font-family: sans-serif;*/
                 font-family: 'Noto Sans JP Variable', sans-serif;
             }    
+        </style>-->
+        <style>
+            html {
+                font-family: 'Noto Sans JP Variable', sans-serif;
+            }    
         </style>
+
     </head>
-    <body>
+    <body style={"background-color: " + bgColor}>
             <div class="w-full max-w-md p-4 flex justify-center">
                 <p class="text-lg font-semibold">
                     正在播放：{pageTitle}
