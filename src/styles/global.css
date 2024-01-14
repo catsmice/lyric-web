@@ -58,7 +58,7 @@ rt {
 
 .translated-lyric {
     font-size: 0.8em;
-    color: gray;
+    color: #00917B;
 }
 
 .current-lyric {
@@ -68,7 +68,7 @@ rt {
 
 #lyrics {
     overflow-y: auto;
-    max-height: 285px; /* Adjust as needed */
+    max-height: 295px; /* Adjust as needed */
     padding: 10px;
     scroll-behavior: smooth; /* Enables smooth scrolling */
 }
